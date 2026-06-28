@@ -112,7 +112,7 @@ const Hero = () => {
             
             {/* WhatsApp */}
             <a 
-              href="https://wa.me/917695973074" 
+              href="https://wa.me/918603067351" 
               target="_blank" 
               rel="noreferrer"
               className="w-12 h-12 rounded-full bg-zinc-100 border border-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-[#25D366] hover:border-[#25D366] hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] group"
@@ -122,7 +122,7 @@ const Hero = () => {
 
             {/* Instagram */}
             <a 
-              href="https://www.instagram.com/lema.web?igsh=MWFtM3BnZHdzamN5aQ==" 
+              href="https://www.instagram.com/akhandjyotiraj" 
               target="_blank" 
               rel="noreferrer"
               className="w-12 h-12 rounded-full bg-zinc-100 border border-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-gradient-to-tr hover:from-yellow-500 hover:via-red-500 hover:to-fuchsia-500 hover:border-transparent hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] group"
@@ -132,7 +132,7 @@ const Hero = () => {
 
             {/* LinkedIn */}
             <a 
-              href="https://www.linkedin.com/in/leeshark-p-1a9642291?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+              href="https://www.linkedin.com/in/rahulkumar8603" 
               target="_blank" 
               rel="noreferrer"
               className="w-12 h-12 rounded-full bg-zinc-100 border border-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-[#0a66c2] hover:border-[#0a66c2] hover:shadow-[0_0_20px_rgba(10,102,194,0.4)] group"
@@ -142,7 +142,7 @@ const Hero = () => {
 
             {/* GitHub */}
             <a 
-              href="https://github.com/leeshark21" 
+              href="https://github.com/akhandjyotiraj" 
               target="_blank" 
               rel="noreferrer"
               className="w-12 h-12 rounded-full bg-zinc-100 border border-zinc-300 flex items-center justify-center transition-all duration-300 hover:bg-black hover:border-black hover:shadow-[0_0_20px_rgba(0,0,0,0.3)] group"

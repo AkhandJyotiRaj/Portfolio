@@ -82,7 +82,7 @@ const Footer = () => {
             {/* Action Buttons */}
             <div className="flex items-center gap-4">
                 <a 
-                    href="https://www.instagram.com/lema.web?igsh=MWFtM3BnZHdzamN5aQ=="
+                    href="https://www.instagram.com/akhandjyotiraj"
                     target="_blank"
                     rel="noreferrer"
                     className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 md:px-12 rounded-xl transition-all shadow-lg hover:shadow-blue-500/30 text-sm md:text-base tracking-wide"
@@ -90,7 +90,7 @@ const Footer = () => {
                     Follow
                 </a>
                 <a 
-                    href="https://ig.me/m/lema.web"
+                    href="https://ig.me/m/akhandjyotiraj"
                     target="_blank"
                     rel="noreferrer"
                     className="bg-zinc-200 hover:bg-white text-zinc-900 font-bold py-3 px-8 md:px-12 rounded-xl transition-all shadow-lg text-sm md:text-base tracking-wide"
@@ -103,11 +103,11 @@ const Footer = () => {
         {/* Logo */}
         <div className="flex flex-col items-center">
             <a href="#" className="text-4xl md:text-5xl font-black tracking-tight flex items-center gap-1">
-            <span className="text-zinc-950">Lema</span>
-            <span className="text-white drop-shadow-md">.web</span>
+            <span className="text-zinc-950">akhandjyotiraj</span>
+            <span className="text-white drop-shadow-md">.me</span>
             </a>
             <p className="mt-4 text-zinc-800 font-medium text-center max-w-sm">
-                Crafting digital experiences that inspire and perform.
+                Turning ideas into fast, scalable, and impactful digital products.
             </p>
         </div>
 
@@ -129,7 +129,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl text-xs sm:text-sm font-bold text-zinc-800 text-center md:text-left gap-4 md:gap-0 mt-2 md:mt-0">
-          <p className="px-4 leading-relaxed">© {new Date().getFullYear()} Lema.web. All rights reserved.</p>
+          <p className="px-4 leading-relaxed">© {new Date().getFullYear()} akhandjyotiraj.me. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

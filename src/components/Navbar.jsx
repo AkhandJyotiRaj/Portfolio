@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import emailjs from '@emailjs/browser';
 
 const Navbar = () => {
   const navRef = useRef(null);
@@ -11,6 +12,11 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', role: '', message: '' });
+
+const buttonRef = useRef(null);
+const [sending, setSending] = useState(false);
+const [sent, setSent] = useState(false);
+const [sendError, setSendError] = useState(null);
 
   useEffect(() => {
     // Initial animations
@@ -34,11 +40,56 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   const handleFeedbackSubmit = (e) => {
-    e.preventDefault();
-    alert("Testimonial added! Thank you.");
-    setIsModalOpen(false);
-    setFormData({ name: '', role: '', message: '' });
-  };
+  e.preventDefault();
+
+  const { name, role, message } = formData;
+  if (!name || !role || !message) return;
+
+  setSending(true);
+  setSendError(null);
+
+  emailjs.send(
+    "service_wlp8xkj",
+    "template_2gmgida",
+    {
+      name,
+      email: role,
+      message: `Role: ${role}\n\nFeedback: ${message}`,
+      time: new Date().toLocaleString()
+    },
+    "6Q-cFGsNYlH6F99LQ"
+  )
+  .then(() => {
+    setSending(false);
+    setSent(true);
+
+    gsap.fromTo(
+      buttonRef.current,
+      { scale: 0.9 },
+      {
+        scale: 1.05,
+        duration: 0.4,
+        ease: "back.out(3)"
+      }
+    );
+
+    setTimeout(() => {
+      setSent(false);
+      setIsModalOpen(false);
+    }, 2000);
+
+    setFormData({
+      name: '',
+      role: '',
+      message: ''
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+    setSending(false);
+    setSendError("Failed to submit feedback");
+  });
+};
 
   const navLinks = ["Home", "About", "Skills", "Portfolio", "Service", "Contact"];
 
@@ -151,12 +202,35 @@ const Navbar = () => {
                 rows="4" 
                 className="w-full bg-black/40 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-zinc-500 focus:outline-none focus:border-[#facc15] transition-all resize-none" 
               />
-              <button 
-                type="submit" 
-                className="w-full bg-[#facc15] text-black font-bold uppercase tracking-widest py-4 rounded-xl mt-2 hover:bg-white transition-colors"
-              >
-                Submit Feedback
+              <button
+  ref={buttonRef}
+  type="submit"
+  disabled={sending}
+  className={`w-full font-bold uppercase tracking-widest py-4 rounded-xl mt-2 transition-all duration-300 flex items-center justify-center gap-3 ${
+    sent
+      ? "bg-green-500 text-white shadow-[0_0_40px_rgba(34,197,94,0.6)] scale-105"
+      : "bg-[#facc15] text-black hover:bg-white"
+  } ${sending ? "opacity-80 scale-95" : ""}`}
+>
+  {sending ? (
+    <>
+      <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" opacity="0.25"/>
+        <path d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" fill="currentColor"/>
+      </svg>
+      <span>Submitting...</span>
+    </>
+  ) : sent ? (
+    <span>Submitted ✓</span>
+  ) : (
+    <span>Submit Feedback</span>
+  )}
               </button>
+              {sendError && (
+  <p className="text-red-400 text-sm text-center mt-2">
+    {sendError}
+  </p>
+)}
             </form>
             
             <button 
