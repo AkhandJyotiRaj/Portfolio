@@ -17,7 +17,7 @@ export const personalInfo = {
   },
   summary:
     "Aspiring software engineer and motivated B.Tech Computer Science student with solid skills in Java, Spring Boot, React, and Python. Passionate about building scalable full-stack applications with clean architecture and modern tech stacks.",
-  resumeUrl: "/Md_Yusuf_Resume_2026.pdf",
+  resumeUrl: "/rahul_resume_2026.pdf",
 };
 
 export const socialLinks = {
@@ -36,7 +36,7 @@ export const heroContent = {
     text: "Contact Me",
     href: "mailto:mdyusufcse096@iesuniversity.ac.in?subject=Hiring Inquiry – Portfolio&body=Hello Rahul Kumar,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,",
   },
-  ctaResume: { text: "Download Resume", href: "/Md_Yusuf_Resume_2026.pdf" },
+  ctaResume: { text: "Download Resume", href: "/rahul_resume_2026.pdf" },
 };
 
 export const aboutContent = {
